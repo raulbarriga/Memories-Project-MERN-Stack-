@@ -14,7 +14,7 @@ export default (posts = [], action) => {
       return [...posts, action.payload];
     case UPDATE:
     case LIKE:
-      //We remove the  LIKE case under UPDATE since they both do the same thing
+      //We can remove the  LIKE case under UPDATE since they both do the same thing, but I keep it for readability
       //action.payload is the newly updated post from memory
       return posts.map(post => post._id === action.payload._id ? action.payload : post)
     case DELETE:
